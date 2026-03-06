@@ -1,57 +1,98 @@
 # OpenClaw - LinkedIn Outreach Toolkit
 
-Automated LinkedIn connection request sender with personalized messages. Uses undetected-chromedriver to bypass bot detection.
+AI-powered LinkedIn outreach automation. Uses OpenClaw to research leads and generate personalized messages, then automates sending connection requests via undetected-chromedriver.
 
-## Prerequisites
+## How It Works
+
+1. **OpenClaw** (AI agent) reads your raw leads, researches them, and generates personalized connection messages
+2. **Python scripts** automate sending those connection requests on LinkedIn via browser automation
+
+---
+
+## Step-by-Step Setup Guide
+
+### Step 1: Install Prerequisites
+
+Make sure you have these installed on your machine:
 
 - **Python 3.8+** — [Download](https://www.python.org/downloads/)
-- **Google Chrome** — must be installed on your system
+- **Google Chrome** — [Download](https://www.google.com/chrome/)
+- **Git** — [Download](https://git-scm.com/downloads)
+- **OpenClaw** — [Install instructions](https://github.com/nichochar/openclaw)
 
-## Setup
+### Step 2: Set Up OpenClaw with Your API Key
 
-1. **Clone the repo**
-   ```bash
-   git clone https://github.com/Vishsekh/openclaw-vish.git
-   cd openclaw-vish
-   ```
+Run the OpenClaw setup wizard:
+```bash
+openclaw doctor
+```
+When prompted, enter your **OpenAI API key** (`sk-...`). You can get one from [platform.openai.com/api-keys](https://platform.openai.com/api-keys).
 
-2. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+This saves your key locally in `~/.openclaw/openclaw.json` — it is NOT stored in the project.
 
-3. **Prepare your leads** — Edit `leads-with-messages.json` with your lead data. Each lead should have:
-   ```json
-   {
-     "name": "Full Name",
-     "role": "Job Title",
-     "company": "Company Name",
-     "linkedin_url": "https://www.linkedin.com/in/username",
-     "connection_message": "Your personalized message (max 300 chars)"
-   }
-   ```
+### Step 3: Clone the Repo
 
-## Usage
+```bash
+git clone https://github.com/Vishsekh/openclaw-vish.git
+cd openclaw-vish
+```
 
-### Validate leads (run first)
+### Step 4: Install Python Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Step 5: Prepare Your Leads
+
+Edit `leads-raw.json` with your own leads. Each lead should have:
+```json
+{
+  "name": "Full Name",
+  "role": "Job Title",
+  "company": "Company Name",
+  "linkedin_url": "https://www.linkedin.com/in/username",
+  "personalization_hook": "Recent achievement or news about this person",
+  "hook_explanation": "Why this hook is relevant"
+}
+```
+
+### Step 6: Generate Personalized Messages with OpenClaw
+
+Open OpenClaw and feed it the prompt from `message-gen-prompt.txt`. OpenClaw will:
+- Read your `leads-raw.json`
+- Generate a personalized connection message for each lead (under 300 chars)
+- Output the results to `leads-with-messages.json`
+
+**Important:** Update the file paths in `message-gen-prompt.txt` to match your local machine before running.
+
+### Step 7: Validate Leads
+
 ```bash
 python validate_leads.py
 ```
-Checks all LinkedIn URLs, auto-fixes 404s, and flags duplicates. Run this before sending requests.
+This checks all LinkedIn URLs, auto-fixes 404s, and flags duplicates. Always run this before sending.
 
-### Send connection requests
+### Step 8: Send Connection Requests
+
 ```bash
 python linkedin_connect_uc.py
 ```
-- First run: Chrome opens, log in to LinkedIn manually. The script detects login and proceeds.
-- Subsequent runs: Uses a persistent Chrome profile (`.uc-chrome-profile/`), no login needed.
-- Safe to re-run — skips already-sent connections.
-- Built-in rate limiting: 15/day, 80/week.
+- **First run:** Chrome opens automatically — log in to your LinkedIn account manually in the browser window
+- The script detects your login and starts sending connection requests with personalized messages
+- **Future runs:** Your login is saved in `.uc-chrome-profile/`, no need to log in again
+- Safe to re-run — it skips already-sent connections
+- Built-in rate limiting: 15/day, 80/week
 
-### Export leads to CSV
+### Step 9: Export Results to CSV
+
 ```bash
 python export_csv.py
 ```
+
+---
+
+## Other Useful Commands
 
 ### Debug tools
 ```bash
@@ -59,19 +100,19 @@ python inspect_linkedin.py <linkedin_url> [--wait]
 python inspect_buttons_live.py <linkedin_url> [--click-connect]
 ```
 
-## Files
+## Project Files
 
 | File | Description |
 |------|-------------|
-| `linkedin_connect_uc.py` | Main automation script |
-| `validate_leads.py` | Pre-flight URL validator |
+| `linkedin_connect_uc.py` | Main automation script — sends connection requests |
+| `validate_leads.py` | Pre-flight URL validator — run before sending |
 | `export_csv.py` | Export leads to CSV |
 | `inspect_linkedin.py` | Debug: inspect profile buttons |
 | `inspect_buttons_live.py` | Debug: live button inspector |
-| `leads-with-messages.json` | Lead data with personalized messages |
-| `leads-raw.json` | Raw lead data |
+| `leads-raw.json` | Your raw lead data (edit this with your leads) |
+| `leads-with-messages.json` | Leads + AI-generated messages (created by OpenClaw) |
 | `linkedin-connect-results.json` | Connection request results log |
 | `retail-leads-india.csv` | Exported CSV of leads |
-| `message-gen-prompt.txt` | Prompt template for generating messages |
-| `linkedin-connect-prompt.txt` | Prompt template for connection requests |
-| `IDEAS.md` | Project ideas and notes |
+| `message-gen-prompt.txt` | Prompt for OpenClaw to generate messages |
+| `linkedin-connect-prompt.txt` | Prompt for connection request automation |
+| `IDEAS.md` | Future improvement ideas |
