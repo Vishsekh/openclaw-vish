@@ -43,24 +43,17 @@ cd openclaw-vish
 pip install -r requirements.txt
 ```
 
-### Step 5: Prepare Your Leads
+### Step 5: Use OpenClaw to Find Leads & Generate Messages
 
-Edit `leads-raw.json` with your own leads. Each lead should have:
-```json
-{
-  "name": "Full Name",
-  "role": "Job Title",
-  "company": "Company Name",
-  "linkedin_url": "https://www.linkedin.com/in/username",
-  "personalization_hook": "Recent achievement or news about this person",
-  "hook_explanation": "Why this hook is relevant"
-}
-```
+Open OpenClaw and describe your target audience. For example:
+> "Find 10 senior retail decision-makers in India (CEOs, MDs, Directors) with their LinkedIn URLs, roles, companies, and a recent personalization hook for each."
 
-### Step 6: Generate Personalized Messages with OpenClaw
+OpenClaw will:
+- **Research and find leads** — names, roles, companies, LinkedIn URLs, and personalization hooks
+- **Save them to `leads-raw.json`**
 
-Open OpenClaw and feed it the prompt from `message-gen-prompt.txt`. OpenClaw will:
-- Read your `leads-raw.json`
+Then feed it the prompt from `message-gen-prompt.txt` to generate personalized connection messages. OpenClaw will:
+- Read `leads-raw.json`
 - Generate a personalized connection message for each lead (under 300 chars)
 - Output the results to `leads-with-messages.json`
 
