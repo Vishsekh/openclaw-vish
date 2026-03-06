@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Jeyandran Venugopal",
+    "company": "Reliance Retail Ventures Ltd",
+    "linkedin_url": "https://www.linkedin.com/in/jeyandran",
+    "status": "already_pending",
+    "timestamp": "2026-03-05 12:10:54"
+  },
+  {
+    "name": "P. Venkatesalu",
+    "company": "Trent Limited (Tata Group — Westside, Zudio)",
+    "linkedin_url": "https://www.linkedin.com/in/venkatesalu-p-53882b15",
+    "status": "already_pending",
+    "timestamp": "2026-03-05 11:59:03"
+  },
+  {
+    "name": "Anchit Nayar",
+    "company": "Nykaa (FSN E-Commerce Ventures)",
+    "linkedin_url": "https://www.linkedin.com/in/anchit-nayar-168aa320",
+    "status": "already_connected",
+    "timestamp": "2026-03-04 22:57:05"
+  },
+  {
+    "name": "Kalyan Krishnamurthy",
+    "company": "Flipkart",
+    "linkedin_url": "https://www.linkedin.com/in/kalyankrishnamurthy",
+    "status": "already_connected",
+    "timestamp": "2026-03-04 22:57:25"
+  },
+  {
+    "name": "Anshul Asawa",
+    "company": "Avenue Supermarts (DMart)",
+    "linkedin_url": "https://www.linkedin.com/in/anshul-asawa",
+    "status": "already_connected",
+    "timestamp": "2026-03-05 11:59:24"
+  },
+  {
+    "name": "Peyush Bansal",
+    "company": "Lenskart",
+    "linkedin_url": "https://www.linkedin.com/in/peyushbansal",
+    "status": "already_connected",
+    "timestamp": "2026-03-05 11:59:47"
+  },
+  {
+    "name": "Vishak Kumar",
+    "company": "Aditya Birla Lifestyle Brands Limited (demerged from ABFRL)",
+    "linkedin_url": "https://www.linkedin.com/in/vishak-kumar-4a3810196",
+    "status": "already_connected",
+    "timestamp": "2026-03-05 12:00:10"
+  },
+  {
+    "name": "Vidit Aatrey",
+    "company": "Meesho",
+    "linkedin_url": "https://www.linkedin.com/in/vidit-aatrey-a3639120",
+    "status": "already_connected",
+    "timestamp": "2026-03-05 12:00:40"
+  },
+  {
+    "name": "Supam Maheshwari",
+    "company": "FirstCry (Brainbees Solutions Limited)",
+    "linkedin_url": "https://www.linkedin.com/in/supam-maheshwari-a735a5",
+    "status": "already_connected",
+    "timestamp": "2026-03-05 12:01:10"
+  },
+  {
+    "name": "Kavindra Mishra",
+    "company": "Shoppers Stop",
+    "linkedin_url": "https://www.linkedin.com/in/kavindra-mishra-b237974",
+    "status": "already_connected",
+    "timestamp": "2026-03-05 14:32:06"
+  },
+  {
+    "name": "Albinder Dhindsa",
+    "company": "Blinkit / Eternal Limited",
+    "linkedin_url": "https://www.linkedin.com/in/adhindsa",
+    "status": "already_connected",
+    "timestamp": "2026-03-05 12:08:54"
+  },
+  {
+    "name": "Aadit Palicha",
+    "company": "Zepto",
+    "linkedin_url": "https://www.linkedin.com/in/aadit-palicha",
+    "status": "already_connected",
+    "timestamp": "2026-03-05 12:09:13"
+  },
+  {
+    "name": "Nandita Sinha",
+    "company": "Myntra",
+    "linkedin_url": "https://www.linkedin.com/in/nandita-sinha-3020275",
+    "status": "sent",
+    "timestamp": "2026-03-05 12:09:43"
+  },
+  {
+    "name": "Vineeta Singh",
+    "company": "SUGAR Cosmetics",
+    "linkedin_url": "https://www.linkedin.com/in/vineetasingh",
+    "status": "sent_no_modal",
+    "timestamp": "2026-03-05 12:10:19"
+  },
+  {
+    "name": "Aman Gupta",
+    "company": "boAt Lifestyle / OffBeat Studios",
+    "linkedin_url": "https://www.linkedin.com/in/aman-gupta-7217a515",
+    "status": "already_connected",
+    "timestamp": "2026-03-05 12:10:46"
+  }
+]

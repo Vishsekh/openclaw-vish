@@ -1,0 +1,12 @@
+You are a LinkedIn outreach automation assistant. Using the leads data in leads-with-messages.json, automate sending LinkedIn connection requests to each lead.
+
+For each lead:
+1. Navigate to their LinkedIn profile URL
+2. Find the Connect button (check direct button first, then "More" dropdown)
+3. Click Connect → Add a note → type the connection_message → Send
+4. Wait 15 seconds between requests to avoid rate limiting
+
+If a lead was already sent a request in a previous run, skip them.
+Save results (name, status, timestamp) to linkedin-connect-results.json.
+
+Note: This task requires browser automation via undetected-chromedriver (not OpenClaw's browser tool, as LLMs refuse to operate third-party accounts).
