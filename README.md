@@ -26,9 +26,32 @@ No manual steps. No copy-pasting. OpenClaw orchestrates the Python scripts end-t
 - **Python 3.8+** — [Download](https://www.python.org/downloads/)
 - **Google Chrome** — [Download](https://www.google.com/chrome/)
 - **Git** — [Download](https://git-scm.com/downloads)
-- **OpenClaw** — [Install instructions](https://github.com/nichochar/openclaw)
+- **Node.js 22+** — [Download](https://nodejs.org/) (required for OpenClaw)
 
-### Step 2: Set Up OpenClaw with Your API Key
+### Step 2: Install OpenClaw
+
+**macOS / Linux / WSL2:**
+```bash
+curl -fsSL https://openclaw.ai/install.sh | bash
+```
+
+**Windows (PowerShell — run as Administrator):**
+```powershell
+iwr -useb https://openclaw.ai/install.ps1 | iex
+```
+
+**Or install via npm:**
+```bash
+npm install -g openclaw@latest
+openclaw onboard --install-daemon
+```
+
+Verify it's installed:
+```bash
+openclaw --version
+```
+
+### Step 3: Set Up Your API Key
 
 ```bash
 openclaw doctor
@@ -37,20 +60,20 @@ When prompted, enter your **OpenAI API key** (`sk-...`). Get one from [platform.
 
 Your key is saved locally in `~/.openclaw/openclaw.json` — it is NOT stored in the project.
 
-### Step 3: Clone the Repo
+### Step 4: Clone the Repo
 
 ```bash
 git clone https://github.com/Vishsekh/openclaw-vish.git
 cd openclaw-vish
 ```
 
-### Step 4: Install Python Dependencies
+### Step 5: Install Python Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Step 5: Run It
+### Step 6: Run It
 
 Open OpenClaw in the project directory and give it your target audience. For example:
 
