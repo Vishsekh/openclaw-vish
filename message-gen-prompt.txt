@@ -1,4 +1,4 @@
-You are a professional outreach specialist. Read the file at C:/Users/vishn/openclaw-vish/leads-raw.json which contains 10 retail decision-makers in India.
+You are a professional outreach specialist. Read the file leads-raw.json in this project directory which contains retail decision-makers in India.
 
 For each lead, generate a personalized LinkedIn connection message that:
 1. Is under 300 characters
@@ -7,6 +7,6 @@ For each lead, generate a personalized LinkedIn connection message that:
 4. Opens with "Hi {first_name},"
 5. Ends with a forward-looking statement
 
-Write the output as a JSON array to C:/Users/vishn/openclaw-vish/leads-with-messages.json with the same fields as the input PLUS a new field "connection_message" for each lead.
+Write the output as a JSON array to leads-with-messages.json in this project directory with the same fields as the input PLUS a new field "connection_message" for each lead.
 
 Important: Each message MUST be under 300 characters. Count carefully.
